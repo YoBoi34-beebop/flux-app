@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(pnpm check *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(uipro init *)",
+      "Bash(python3 *)",
+      "Bash(npm run *)",
+      "Bash(pnpm run *)",
+      "Bash(pnpm install *)"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "claude-flow"
+  ]
 }

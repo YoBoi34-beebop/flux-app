@@ -157,6 +157,146 @@
   font-size: 0.8rem;
 }
 
+/* ─── Smooth scroll ──────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Ticker animation ───────────────────────────────────────────────────── */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  padding-left: 2rem;
+  animation: ticker-scroll 25s linear infinite;
+}
+
+/* ─── Home page responsive grids ────────────────────────────────────────── */
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 5rem;
+  align-items: center;
+}
+.home-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #bfdbfe;
+}
+.home-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: #1d4ed8;
+}
+.home-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.home-pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #1d4ed8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.home-nav-text { display: inline; }
+
+@media (max-width: 768px) {
+  .home-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .home-steps-grid    { grid-template-columns: 1fr; }
+  .home-features-grid { grid-template-columns: 1fr; }
+  .home-roles-grid    { grid-template-columns: 1fr; }
+  .home-pricing-grid  { grid-template-columns: 1fr; }
+  .home-nav-text      { display: none; }
+}
+
+/* ─── Home page interactive states ──────────────────────────────────────── */
+
+.home-nav-link {
+  color: #93c5fd;
+  font-size: 0.75rem;
+  text-decoration: none;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+.home-nav-link:hover { color: #eff6ff; }
+
+.home-cta-accent {
+  background: #2563eb;
+  color: #fff;
+  transition: background-color 0.15s ease;
+}
+.home-cta-accent:hover { background: #1d4ed8; }
+.home-cta-accent:active { transform: scale(0.98); }
+
+.home-cta-dark {
+  background: #eff6ff;
+  color: #1e3a8a;
+  transition: background-color 0.15s ease;
+}
+.home-cta-dark:hover { background: #dbeafe; }
+
+.home-step-card {
+  background: #fff;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.home-step-card:hover {
+  background: #f0f9ff;
+  box-shadow: inset 3px 0 0 #3b82f6;
+}
+
+.home-feature-card {
+  background: #1e40af;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+.home-feature-card:hover { background: #1e4ab8; }
+
+.home-role-card {
+  background: #fff;
+  border: 1px solid #bfdbfe;
+  transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.home-role-card:hover {
+  border-color: #1e3a8a;
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 #1e3a8a;
+}
+
+.home-footer-link {
+  color: #94a3b8;
+  font-size: 0.62rem;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.home-footer-link:hover { color: #60a5fa; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+  .home-step-card,
+  .home-feature-card,
+  .home-role-card,
+  .home-cta-accent,
+  .home-cta-dark,
+  .home-footer-link,
+  .home-nav-link { transition: none; transform: none !important; }
+}
+
 /* ─── Industrial Card ───────────────────────────────────────────────────── */
 .ind-card {
   background: var(--ind-pure);
